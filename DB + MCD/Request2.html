@@ -1,0 +1,89 @@
+A - Informations d'un film ( id_film ): titre, année, durée(formet HH:MM) et réalisateur
+
+SELECT film_name,dt_release,DATE_FORMAT(film_length,"%H:%i")AS film_length, fname, lname
+FROM film
+INNER JOIN director ON film.director_id= director.id_director
+WHERE id_film =1
+
+
+B - Liste des films dont la durée excède 2h15 classés par durée (plus long au plus court)
+
+SELECT film_name, film_length
+FROM film
+WHERE film_length > "02:15"
+ORDER BY film_length DESC
+
+C - Liste des films d'un réalisateur (avec année de sortie)
+
+SELECT fname, lname, film_name, dt_release
+FROM film
+INNER JOIN director ON film.director_id= director.id_director
+WHERE lname LIKE "Lucas"
+
+D - Nbr de films par genre (en DESC)
+
+SELECT category_name, COUNT(id_film)
+FROM film
+INNER JOIN category ON film.category_id = category.id_category
+GROUP BY category_id ORDER BY category_id DESC
+
+E - Nbr de films par réalisateur (en DESC)
+
+SELECT COUNT(id_film), fname, lname
+FROM film
+INNER JOIN director ON film.director_id= director.id_director
+GROUP BY director_id ORDER BY COUNT(id_film) DESC
+
+F - Casting d'un film en particulier (id_film) : nom, prénom des acteurs + sexe
+
+SELECT id_film,film.film_name, actor.fname, actor.lname, actor.sexe
+FROM casting
+INNER JOIN film ON casting.film_id=film.id_film
+INNER JOIN actor ON casting.actor_id=actor.id_actor
+WHERE id_film = 1     ou     WHERE id_film LIKE 1
+
+G - Films tournés par un acteur en particulier(id_actor) avec leurs role et l'année de sortie (plus récent au plus ancien)
+
+SELECT film_name, actor.fname, actor.lname, role.role_name, film.dt_release
+FROM film
+INNER JOIN casting ON film.id_film=casting.film_id
+INNER JOIN actor ON casting.actor_id=actor.id_actor
+INNER JOIN role ON casting.role_id=role.id_role
+WHERE id_actor LIKE "1"
+ORDER BY dt_release DESC
+
+H - Listes des personnes qui sont à la fois acteurs et réalisateurs 
+
+SELECT actor.lname, actor.fname
+FROM actor
+INNER JOIN casting ON actor.id_actor=casting.actor_id
+INNER JOIN film ON casting.film_id=film.id_film
+INNER JOIN director ON film.director_id=director.id_director
+WHERE actor.fname=director.fname
+
+I - Liste des films qui ont moins de 15 ans (classés du plus récent au plus ancien)
+
+SELECT film_name, dt_release
+FROM film
+WHERE (DATE_fORMAT(NOW(),"%Y")-dt_release) < 15
+ORDER BY dt_release DESC
+
+J - Nbr d'hommes et de femmes parmis les acteurs
+
+SELECT COUNT(sexe), sexe
+FROM actor
+GROUP BY sexe
+
+K - Liste des acteurs ayant plus de 50 ans 
+
+SELECT fname, bdate
+FROM actor
+WHERE (DATE_FORMAT(NOW(),"%Y")- date_format(bdate,"%Y")) >50
+
+L - Acteurs ayant joué dans 2 films ou plus 
+
+SELECT fname, lname,COUNT(actor.id_actor) AS countFilm
+FROM actor
+INNER JOIN casting ON actor.id_actor= casting.actor_id
+GROUP BY actor.id_actor
+HAVING countFilm >=2

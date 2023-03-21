@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ***************** FONT ************** */
+.secondaryTitle {
+    color: var(--quaternary-color);
+    width: 450px;
+    margin: 50px auto 100px auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+}
+
+a, p, h1, h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ***************** COLOR ************** */
+:root {
+    /* --primary-color: #53A8F8; */
+    --primary-color: rgb(70, 7, 7);
+    --secondary-color: #3C3939;
+    --tertiary-color: rgb(255, 243, 243);
+    --quaternary-color: white;
+    --quinary-color: black;
+}
+
+/* ***************** TEXT ************** */
+
+p {
+    color: var(--secondary-color);
+    font-size: 25px;
+} 
+
+/* p {
+    
+} */
+
+
+/* ***************** HEADER ************** */
+nav {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    height: 80px;
+    background-color: #000000;
+}
+
+nav a {
+    color: var(--quaternary-color);
+    padding: 30px 30px;
+    transition: 0.5s;
+}
+
+.logo {
+    margin-left: 2vw;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+/* nav .menu a {
+    color: var(--quaternary-color);
+    padding: 30px 30px;
+} */
+
+/* nav li {
+    width: 125px;
+} */
+
+nav .menu a:hover {
+    background-color: var(--primary-color);
+    padding: 31px 30px;
+    transition: 0.5s;
+}
+
+.menu-log {
+    margin-right: 5vw;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 53%;
+    margin: 0 auto;
+}
+
+.menu a {
+    font-size: 20px;
+}
+
+.bouton1 {
+    background-color: var(--quinary-color);
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+
+.bouton2 {
+    background-color: var(--primary-color);
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* nav a:visited {
+    color: inherit;
+} */
+
+/* ***************** HEADER-CONTAINER ************** */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container {
+    width: 100%;
+    /* height: 850px; */
+    background-image: url("../img/StarWarsVII-affiche-3039.jpg");
+    background-size: cover;
+    background-color: var(--primary-color);
+
+}
+
+.header-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* ***************** CONTAINER-CARD ************** */
+
+.container-content {
+    background-color: var(--primary-color);
+}
+
+.container-infos {  
+    margin-left: 5vw;
+    margin-top: 30px;
+    padding-right: 10px;
+}
+
+.container-infos a {
+    color: var(--primary-color);
+    margin: 0 0 40px 0;
+    font-weight: bold;
+    font-size: 25px;
+    flex-shrink: 5;
+}
+
+.container-infos p {
+    margin: 40px 0 40px 0;
+    font-weight: bold;
+}
+
+.container-infos span {
+    font-size: 18px;
+}
+
+.container-infos:nth-last-child() {
+    padding-right: 30px;
+}
+
+.container-cards {
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 14px 15px rgba(38, 2, 2, 0.78);
+    -webkit-box-shadow: 0px 0px 14px 15px rgba(38, 2, 2, 0.78);
+    -moz-box-shadow: 0px 0px 14px 15px rgba(38, 2, 2, 0.78);
+}
+
+.container-flex {
+    margin: 50px auto;
+    display: flex; 
+    padding-bottom: 30px;
+}
+
+.container-img {
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.img {
+    border-radius: 5px;
+    box-shadow: 10px 10px 32px 0px rgba(0,0,0,0.52);
+    -webkit-box-shadow: 10px 10px 32px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 10px 10px 32px 0px rgba(0,0,0,0.52);
+
+    /* transition: transform 0.3s ease-in-out;  */
+}
+
+/* .img:hover {
+    transform: scale(1.05);
+    transform-origin: center;
+} */
+
+.container-infos .lien {
+    color: var(--primary-color);
+}
+
+
+.container-cards img{
+    width: 420px;
+    height: 550px;
+}
+
+.container-all{
+    padding-bottom: 50px;
+}
+
+/* *********************** FOOTER ********************** */
+
+footer {
+    width: 100%;
+    height: 180px;
+    background-color: #3C3939;
+}
+
+.footer-copy p {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    color: var(--quaternary-color);
+}

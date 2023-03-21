@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ***************** FONT ************** */
+a, p, h1, h2, ul, li {
+    font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+    font-size: 20px;
+}
+
+
+/* ***************** COLOR ************** */
+:root {
+    --primary-color: #53A8F8;
+    --secondary-color: #3C3939;
+    --tertiary-color: rgb(70, 7, 7);
+    --quaternary-color: white;
+    --quinary-color: black;
+}
+
+/* ***************** TEXT ************** */
+
+.main-menu a {
+    color: var(--quaternary-color);
+}
+
+/* ***************** HEADER ************** */
+.container {
+    background-color: var(--tertiary-color);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    height: 80px;
+}
+
+nav a {
+    color: var(--quaternary-color);
+    padding: 30px 30px;
+    transition: 0.3s;
+}
+
+.logo {
+    margin-left: 2vw;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav .menu a:hover {
+    background-color: var(--tertiary-color);
+    padding: 31px 30px;
+    transition: 0.3s;
+}
+
+.menu-log {
+    margin-right: 5vw;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.bouton1 {
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+
+.bouton2 {
+    background-color: var(--tertiary-color);
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+
+.menu {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* nav a:visited {
+    color: inherit;
+} */
+
+/* ***************** HEADER-CONTAINER ************** */
+
+.header-container {
+    height: 850px;
+    background-image: url("../img/StarWarsVII-affiche-3039.jpg");
+    background-size: cover;
+    color: var(--quaternary-color);
+}
+
+.header-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.menu-bot {
+    position: absolute;
+    bottom: 120px;
+    right: 50px;
+}
+
+.bouton2 {
+    background-color: var(--tertiary-color);
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.bouton1 {
+    background-color: var(--quinary-color);
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.bouton {
+    border-radius: 5px;
+}
+
+.menu-bot a{
+    margin-right: 15px;
+}
+
+/* ***************** CONTAINER-CARD ************** */
+
+.container-cards img{
+    width: 30%;
+    height: 30%;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-film {
+    display: flex;
+    align-items: center;
+}
+
+/* ***************** MAIN ************** */
+.main-menu{
+    width: 70%;
+    margin-left: 55px;
+}
+
+.main-menu ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-left: 9.5vw;
+    font-weight: bold;
+}
+
+.container-main-img {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.testJs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.main-img1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-img2 {
+    display: flex;
+    justify-content: space-between;  
+}
+
+.img-main {
+    width: 400px;
+    height: 400px;
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+    -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+}
+
+
+/* ************************ MENU DEROULANT ********************* */
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+    margin-left: 0;
+    margin-top: 0;
+    width: 110px;
+
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    z-index: 10;
+}
+
+.dropdown-menu li {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0 5px;
+
+}
+
+.dropdown-menu li:hover {
+    display: block;
+    margin-bottom: 5px;
+    background-color: var(--quaternary-color);
+    transition: 0.3s;
+}
+
+.dropdown-menu li a {
+    color: var(--quaternary-color);
+    text-decoration: none;
+
+}
+
+.dropdown-menu li a:hover {
+    color: var(--tertiary-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ********************* FOOTER ********************** */
+
+footer {
+    width: 100%;
+    height: 180px;
+    background-color: #3C3939;
+    margin-top: 100px;
+}
+
+.footer-links a {
+    color: var(--quaternary-color);
+}
+
+.footer-copy p {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.fa-star {
+    color: #53A8F8;
+}
+
+/* ************************* */
+
+.blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+  }
+  
+  .grid-item {
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+    -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
+  }
+  
+  .grid-item img:hover {
+    filter: grayscale(0%);
+  }
+  
+  .blogContainer .grid-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    filter: grayscale(100%);
+    transition: 0.5s;
+  }
+  
+  .blogContainer .grid-item img:hover {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    filter: grayscale(0%);
+    transform: 0.5s;
+  }
+
+  
+  .blogContainer .grid-item span {
+    filter: none;
+  }
+  
+  .textOnImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    transform: translate(-10%, -90%);
+    color: white;
+    text-align: left;
+  }
