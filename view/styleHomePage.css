@@ -333,3 +333,40 @@ footer {
     color: white;
     text-align: left;
   }
+
+  /* ************************ FORM ADMIN ******************************* */
+
+  input{
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    outline: none
+}
+
+label {
+    color: var(--quinary-color);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.formLast {
+    margin-top: 74px;
+}
+
+
