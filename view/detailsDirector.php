@@ -9,7 +9,7 @@ ob_start();
 				<?php
 				if (isset($requestDirectorInfos)) {
 					$director_infos = $requestDirectorInfos->fetch(); ?>
-					<img class="img" src="<?=$director_infos['url_img'] ?>" alt="index.php?action=detailsFilm&id=<?=$film['id_film'] ?>">
+					<img class="img" src="<?=$director_infos['url_img'] ?>" alt="">
 			</div>
 			<div class="container-infos">
 				<p><?= $director_infos["lname"] . " " . $director_infos["fname"] . " est un " . $director_infos["sexe"] . " né le " . $director_infos["bdate"]  ?> </p>
