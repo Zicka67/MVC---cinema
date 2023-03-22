@@ -80,18 +80,15 @@ if (isset($_GET["action"])) {
 			case "insertActors":
 				$controllerCinemaInsert->insertPerson();
 				break;
-			// case "insertPerson":
-			// 	$controllerCinemaInsert->insertPerson();
-			// 	break;  ??
 			case "insertCategorys":
 				$controllerCinemaInsert->insertCategory();
 				break;	
 			case "insertRoles":
 				$controllerCinemaInsert->insertRole();
 				break;
-			// case "insertCasting":
-			// 	$controllerCinemaInsert->insertCasting();
-			// 	break;
+			case "insertCastings":
+				$controllerCinemaInsert->insertCasting();
+				break;
 
 			// ********DELET************
 
