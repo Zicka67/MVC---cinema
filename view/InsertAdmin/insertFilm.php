@@ -29,6 +29,17 @@ ob_start();
     </div>
 
     <div class="form">
+        <label for="director">Director</label>
+        <select name="" id="">
+            <option value="clooney">clooney</option>
+            <option value="lucas">lucas</option>
+            <option value="reeves">reeves</option>
+            <option value="jenkins">jenkins</option>
+            <option value="donovan">donovan</option>
+        </select>
+    </div>
+
+    <div class="form">
         <label for="note">Note </label>
         <input type="number" min="0" max="5" name="note" id="note">
     </div>
