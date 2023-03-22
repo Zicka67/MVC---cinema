@@ -10,27 +10,27 @@ ob_start();
     </div>
 
     <div class="form">
-    <label for="film_length">Fname</label>
-    <input type="textarea" name="fname" id="fname">
+        <label for="film_length">Fname</label>
+        <input type="textarea" name="fname" id="fname">
     </div>
 
     <div class="form">
-    <label for="dt_release">Sexe</label>
-    <input type="textarea" name="sexe" id="sexe">
+        <label for="dt_release">Sexe</label>
+        <input type="textarea" name="sexe" id="sexe">
     </div>
 
     <div class="form">
-    <label for="url_img">Bdate</label>
-    <input type="date" name="Bdate" id="Bdate">
+        <label for="url_img">Bdate</label>
+        <input type="date" name="Bdate" id="Bdate">
     </div>
 
     <div class="form">
-    <label for="synopsis">url_img</label>
-    <input type="textarea" name="url_img" id="url_img">
+        <label for="synopsis">url_img</label>
+        <input type="textarea" name="url_img" id="url_img">
     </div>
 
     <div class="form formLast">
-    <input type="submit" name="submit" value="Insert actor">
+        <input type="submit" name="submit" value="Insert actor">
     </div>
 
 </form>

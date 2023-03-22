@@ -1,33 +1,47 @@
 <?php
 ob_start();
 ?>
-<form action="index.php?action=insertFilm" method="post">
+<form action="index.php?action=insertFilms" method="post">
 
-    <label for="film_name">Titre</label>
-    <input type="textarea" name="film_name" id="film_name">
+    <div class="form">
+        <label for="film_name">Titre</label>
+        <input type="textarea" name="film_name" id="film_name">
+    </div>
 
-    <label for="film_length">Durée</label>
-    <input type="number" name="film_length" id="film_length">
+    <div class="form">
+        <label for="dt_release">Dt sortie</label>
+        <input type="date" name="dt_release" id="dt_release">
+    </div>
 
-    <label for="dt_release">Dt sortie</label>
-    <input type="number" name="dt_release" id="dt_release">
+    <div class="form">
+        <label for="film_length">Durée</label>
+        <input type="number" name="film_length" id="film_length">
+    </div>
 
-    <label for="url_img">Affiche</label>
-    <input type="textarea" name="url_img" id="url_img">
+    <div class="form">
+        <label for="synopsis">Synopsis :</label>
+        <input type="textarea" name="synopsis" id="synopsis">
+    </div>
 
-    <label for="synopsis">Synopsis :</label>
-    <input type="textarea" name="synopsis" id="synopsis">
+    <div class="form">
+        <label for="url_img">Affiche</label>
+        <input type="textarea" name="url_img" id="url_img">
+    </div>
 
-    <label for="note">Note </label>
-    <input type="number" min="0" max="5" name="note" id="note">
+    <div class="form">
+        <label for="note">Note </label>
+        <input type="number" min="0" max="5" name="note" id="note">
+    </div>
 
-    <input type="submit" name="submit" value="Ajouter le film">
+    <div class="formLast">
+        <input type="submit" name="submit" value="Ajouter le film">
+    </div>
 
-    </form>
-        
-        
-        
-        <?php
+</form>
+
+
+
+<?php
 $title = "Add film";
 $secondary_title = "Add film";
 $content = ob_get_clean();
