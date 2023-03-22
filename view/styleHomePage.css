@@ -349,6 +349,7 @@ label {
     font-size: 20px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
 
 form {
@@ -366,7 +367,7 @@ form {
 }
 
 .formLast {
-    margin-top: 74px;
+    margin-top: 84px;
 }
 
 
