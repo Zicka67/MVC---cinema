@@ -12,18 +12,19 @@ class InsertController
         //Connection
         $pdo = Connect::connectToDb();
 
-        $requestCategory = $pdo->query(
-            "
-			SELECT genre_name, id_genre
-			FROM genre 
-			"
-        );
+        // $requestCategory = $pdo->query(
+        //     "
+		// 	SELECT category_name, id_category
+		// 	FROM category 
+		// 	"
+        // );
 
 
-        $requestPerson = $pdo->query(
+        $requestDirector = $pdo->query(
             "
-		    SELECT fname, lname, id_Person
-		    FROM Person
+            SELECT fname, lname, id_director
+            FROM director
+            INNER JOIN person ON director.person_id = person.id_person
 		"
         );
 
@@ -42,16 +43,17 @@ class InsertController
             }
             $director_id = filter_input(INPUT_POST, "director", FILTER_SANITIZE_NUMBER_INT);
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_NUMBER_INT);
-            
-            var_dump($_POST['film_name']);die;
+
+            var_dump($_POST['director']);die;
+
             // SI chaque var n'est pas vide
-            if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && !empty($director_id) && !empty($note)) {
+            if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && !empty($note)) {
 
                 $pdo = Connect::connectToDb();
 
                 $sqlRequest = $pdo->prepare(
                     "
-                    INSERT INTO film (film_name, dt_release, film_length, synopsis, url_img,  director_id, note)
+                    INSERT INTO film (film_name, dt_release, film_length, synopsis, url_img, director_id, note)
                     VALUES (:film_name, :dt_release, :film_length, :synopsis, :url_img, :director_id, :note)	
                     "
                 );
@@ -204,7 +206,7 @@ class InsertController
         $pdo = Connect::connectToDb();
 
         //FILM
-        $sqlRequest = $pdo->query(
+        $requestFilm = $pdo->query(
             "
             SELECT film_name, id_film
             FROM film
@@ -212,7 +214,7 @@ class InsertController
         );
 
         //PERSON
-        $sqlRequest = $pdo->query(
+        $requestPerson = $pdo->query(
             "
             SELECT lname, fname, id_actor
             FROM actor
@@ -221,7 +223,7 @@ class InsertController
         );
 
         //ROLE
-        $sqlRequest = $pdo->query(
+        $requestRole = $pdo->query(
             "
             SELECT role_name, id_role
             FROM role
