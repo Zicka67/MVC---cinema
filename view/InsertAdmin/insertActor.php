@@ -21,7 +21,7 @@ ob_start();
 
     <div class="form">
         <label for="url_img">Bdate</label>
-        <input type="date" name="Bdate" id="Bdate">
+        <input type="date" name="birthdate" id="birthdate">
     </div>
 
     <div class="form">
@@ -36,8 +36,8 @@ ob_start();
 </form>
 
 <?php
-$title = "Insert actor";
-$secondary_title = "Insert actor";
+$title = "Insert person";
+$secondary_title = "Insert person";
 $content = ob_get_clean();
 require "view/admin.php";
 ?>
