@@ -12,19 +12,18 @@ class InsertController
         //Connection
         $pdo = Connect::connectToDb();
 
-        // $requestCategory = $pdo->query(
-        //     "
-		// 	SELECT category_name, id_category
-		// 	FROM category 
-		// 	"
-        // );
-
-
         $requestDirector = $pdo->query(
             "
             SELECT fname, lname, id_director
             FROM director
             INNER JOIN person ON director.person_id = person.id_person
+		"
+        );
+
+        $requestCategory = $pdo->query(
+            "
+            SELECT category_name, id_category
+			FROM category 
 		"
         );
 
@@ -44,8 +43,7 @@ class InsertController
             $director_id = filter_input(INPUT_POST, "director", FILTER_SANITIZE_NUMBER_INT);
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_NUMBER_INT);
 
-            var_dump($_POST['director']);die;
-
+            // var_dump($_POST['director']);die;
             // SI chaque var n'est pas vide
             if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && !empty($note)) {
 
@@ -61,8 +59,7 @@ class InsertController
                 $sqlRequest->execute([
                     "film_name" => $film_name, "dt_release" => $dt_release, "film_length" => $film_length, "url_img" => $url_img, "director_id" => $director_id, "synopsis" => $synopsis, "note" => $note
                 ]);
-
-                // header('Location: index.php?action=listFilms');
+                header('Location: index.php?action=listFilms');
                 die();
             }
         }
