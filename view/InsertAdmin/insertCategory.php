@@ -16,8 +16,8 @@ ob_start();
 </form>
 
 <?php
-$title = "Insert actor";
-$secondary_title = "Insert actor";
+$title = "Insert category";
+$secondary_title = "Insert category";
 $content = ob_get_clean();
 require "view/admin.php";
 ?>
