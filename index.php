@@ -74,9 +74,9 @@ if (isset($_GET["action"])) {
 			// case "insertFilm":
 			// 	$controllerCinema->insertFilm();
 			// 	break;
-			// case "insertDirector":
-			// 	$controllerCinema->insertDirector();
-			// 	break;
+			case "insertDirectors":
+				$controllerCinemaInsert->insertPerson();
+				break;
 			case "insertActors":
 				$controllerCinemaInsert->insertPerson();
 				break;
