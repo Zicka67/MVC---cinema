@@ -42,7 +42,7 @@ class CinemaController
         // Le résultat est stocké dans la variable $pdo pour être utilisé dans la requête SQL.
         $request = $pdo->query(
             "
-            SELECT *, category_name 
+            SELECT *
             FROM film 
             INNER JOIN category_film ON film.id_film = category_film.id_film
             INNER JOIN category ON category_film.id_category = category.id_category
