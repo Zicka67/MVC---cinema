@@ -29,11 +29,22 @@ ob_start();
     </div>
 
     <div class="form">
-        <label for="director">Director :</label>
+        <label for="director">Director</label>
         <select name="director" id="director">
         <?php 
             foreach($requestDirector->fetchAll() as $director){
                 echo "<option value='".$director['id_director']."'>".$director['lname']."</option>";
+            }; 
+            ?>
+        </select>
+    </div>
+
+    <div class="form">
+        <label for="category">category</label>
+        <select name="category" id="category">
+        <?php 
+            foreach($requestCategory->fetchAll() as $category){
+                echo "<option value='".$category['id_category']."'>".$category['category_name']."</option>";
             }; 
             ?>
         </select>
