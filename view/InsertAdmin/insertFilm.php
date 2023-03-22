@@ -19,7 +19,7 @@ ob_start();
     </div>
 
     <div class="form">
-        <label for="synopsis">Synopsis :</label>
+        <label for="synopsis">Synopsis</label>
         <input type="textarea" name="synopsis" id="synopsis">
     </div>
 
@@ -29,13 +29,13 @@ ob_start();
     </div>
 
     <div class="form">
-        <label for="director">Director</label>
-        <select name="" id="">
-            <option value="clooney">clooney</option>
-            <option value="lucas">lucas</option>
-            <option value="reeves">reeves</option>
-            <option value="jenkins">jenkins</option>
-            <option value="donovan">donovan</option>
+        <label for="director">Director :</label>
+        <select name="director" id="director">
+        <?php 
+            foreach($requestDirector->fetchAll() as $director){
+                echo "<option value='".$director['id_director']."'>".$director['lname']."</option>";
+            }; 
+            ?>
         </select>
     </div>
 
