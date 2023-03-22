@@ -9,6 +9,7 @@ $film = $requestFilmInfos->fetch();
 		<div class="container-flex">
 			<div class="container-img">
 				<img class="img" src="<?= $film["url_img"]?>" alt="affiche<?=$film["film_name"]?>">
+			
 			</div>
 			<div class="container-infos">
 				<p><?= $film["film_name"] ?></p> 
