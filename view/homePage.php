@@ -112,42 +112,42 @@
           
 
           <div class="grid-item" data-category="sf">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=1">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=1">
                 <img src="img\affiche-1120453.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="action">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=2">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=2">
                 <img src="img\2484953.webp" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="horror">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=3">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=3">
                 <img src="img\aevmntjcng4zlfeeegz79frmues-424.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="comedie">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=4">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=4">
                 <img src="img\affiche.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="sf">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=5">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=5">
                 <img src="img\affclones.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="action">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=6">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=6">
                 <img src="img\MV5BOGZmYzVkMmItM2NiOS00MDI3LWI4ZWQtMTg0YWZkODRkMmViXkEyXkFqcGdeQXVyODY0NzcxNw._V1_.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="comedie">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=7">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=7">
                 <img src="img\037786_af.jpg" alt="">
             </a>
           </div>
           <div class="grid-item" data-category="sf">
-            <a href="http://localhost/MVC-Cinema/index.php?action=detailsFilm&id=8">
+            <a href="http://localhost/GK/MVC---cinema/index.php?action=detailsFilm&id=8">
                 <img src="img\18423997.jpg" alt="">
             </a>
           </div>
