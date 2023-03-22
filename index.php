@@ -71,9 +71,9 @@ if (isset($_GET["action"])) {
 			// ****************
 
 
-			// case "insertFilm":
-			// 	$controllerCinema->insertFilm();
-			// 	break;
+			case "insertFilms":
+				$controllerCinemaInsert->insertFilm();
+				break;
 			case "insertDirectors":
 				$controllerCinemaInsert->insertPerson();
 				break;
@@ -81,16 +81,16 @@ if (isset($_GET["action"])) {
 				$controllerCinemaInsert->insertPerson();
 				break;
 			// case "insertPerson":
-			// 	$controllerCinema->insertPerson();
+			// 	$controllerCinemaInsert->insertPerson();
 			// 	break;  ??
-			// case "insertCategory":
-			// 	$controllerCinema->insertCategory();
-			// 	break;	
-			// case "insertRole":
-			// 	$controllerCinema->insertRole();
-			// 	break;
+			case "insertCategorys":
+				$controllerCinemaInsert->insertCategory();
+				break;	
+			case "insertRoles":
+				$controllerCinemaInsert->insertRole();
+				break;
 			// case "insertCasting":
-			// 	$controllerCinema->insertCasting();
+			// 	$controllerCinemaInsert->insertCasting();
 			// 	break;
 
 			// ********DELET************
