@@ -29,11 +29,10 @@
                 <h2 class="logo"><a href="index.php?action=listFilms">GK Cine</a></h2>
                 <ul class="menu">
                     <li><a href="index.php?action=insertFilms">Add films</a></li>
-                    <li><a href="index.php?action=insertActors">Add actors</a></li>
-                    <li><a href="index.php?action=insertDirectors">Add directors</a></li>
-                    <li><a href="index.php?action=insertCategorys">Add categorys</a></li>
+                    <li><a href="index.php?action=insertActors">Add person</a></li>
                     <li><a href="index.php?action=insertRoles">Add roles</a></li>
-                </ul>
+                    <li><a href="index.php?action=insertCategorys">Add categorys</a></li>
+                    <li><a href="index.php?action=insertCastings">Add castings</a></li>                </ul>
                 <div class="menu-log">
                     <a class="bouton" href="">Sign in</a>
                     <a class="bouton2" href="">Sign up</a>
