@@ -15,7 +15,7 @@ ob_start();
 
     <div class="form">
         <label for="film_length">Durée</label>
-        <input type="number" name="film_length" id="film_length">
+        <input type="number" min="0" name="film_length" id="film_length">
     </div>
 
     <div class="form">
@@ -32,8 +32,9 @@ ob_start();
         <label for="director">Director</label>
         <select name="director" id="director">
         <?php 
-            foreach($requestDirector->fetchAll() as $director){
-                echo "<option value='".$director['id_director']."'>".$director['lname']."</option>";
+        $AllDirector=$requestDirector->fetchAll();
+            foreach($AllDirector as $director){
+                echo "<option value='".$director['id_director']."'>".$director['lname']. " " .$director['fname']."</option>";
             }; 
             ?>
         </select>
@@ -41,9 +42,10 @@ ob_start();
 
     <div class="form">
         <label for="category">category</label>
-        <select name="category" id="category">
+        <select name="category[]" id="category" multiple>
         <?php 
-            foreach($requestCategory->fetchAll() as $category){
+        $AllCategory=$requestCategory->fetchAll(); 
+            foreach($AllCategory as $category){
                 echo "<option value='".$category['id_category']."'>".$category['category_name']."</option>";
             }; 
             ?>
