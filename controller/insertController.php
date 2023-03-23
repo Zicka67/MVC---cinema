@@ -41,10 +41,9 @@ class InsertController
                 $url_img = "";
             }
             $director_id = filter_input(INPUT_POST, "director", FILTER_SANITIZE_NUMBER_INT);
+            //On précise qu'il faut un tab pour category
             $category = filter_input(INPUT_POST, "category" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_NUMBER_INT);
-      
-            // $categorys = filter_input(INPUT_POST, "genres" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
             // Vérifie si toutes les entrées de formulaire requises ne sont pas vides et que les types de données reçus sont valides avant de faire l'insertion dans la DB
             if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && $category != false && !empty($category) && $note != false && !empty($note)) {
