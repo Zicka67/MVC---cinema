@@ -27,10 +27,10 @@ class InsertController
 		"
         );
 
-        // Ajout en DB
+        // vérifie si le bouton submit a été cliqué sur le formulaire avant de continuer
         if (isset($_POST["submit"])) {
 
-            // Sécurité
+            // Pour filtrer les entrées de formulaire reçues via $_POST.
             $film_name = filter_input(INPUT_POST, "film_name", FILTER_SANITIZE_SPECIAL_CHARS);
             $dt_release = filter_input(INPUT_POST, "dt_release", FILTER_SANITIZE_NUMBER_INT);
             $dt_release = intval(substr($dt_release, 0, 4));
@@ -43,43 +43,47 @@ class InsertController
             $director_id = filter_input(INPUT_POST, "director", FILTER_SANITIZE_NUMBER_INT);
             $category = filter_input(INPUT_POST, "category" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_NUMBER_INT);
-            // var_dump($category); die;
+      
             // $categorys = filter_input(INPUT_POST, "genres" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
-            // SI chaque var n'est pas vide
+            // Vérifie si toutes les entrées de formulaire requises ne sont pas vides et que les types de données reçus sont valides avant de faire l'insertion dans la DB
             if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && $category != false && !empty($category) && $note != false && !empty($note)) {
                 
+                // Connection a la DB
                 $pdo = Connect::connectToDb();
                 // var_dump($category); die;
+
+                //On prépare la requete SQL pour envoyer dans le tab film
                 $sqlRequest = $pdo->prepare(
                     "
                     INSERT INTO film (film_name, dt_release, film_length, synopsis, url_img, director_id, note)
                     VALUES (:film_name, :dt_release, :film_length, :synopsis, :url_img, :director_id, :note)	
                     "
                 );
-
+                //On exécute la requête SQL pour insérer des données dans le tab film avec les valeurs d'entrée transmises sous forme de tableau associatif
                 $sqlRequest->execute([
                     "film_name" => $film_name, "dt_release" => $dt_release, "film_length" => $film_length, "synopsis" => $synopsis, "url_img" => $url_img, "director_id" => $director_id, "note" => $note
                 ]);
 
+                // Récupère le dernier ID inséré à partir du tab film
                 $film_id = $pdo->lastInsertId();
-    // var_dump($film_id); die;
+                // var_dump($film_id); die;
                 //Préparation de la requete
                 $tabFilm = $pdo->prepare("
                     INSERT INTO appartenir (film_id, category_id)
                         VALUES (:film_id, :category_id)  
                 ");
 
-                //Exécution de la requete 
-                foreach($category as $cat){
+                //Exécute la requête SQL pour insérer des données dans le tab appartenir pour chaque category associée au film. 
+                foreach($category as $cate){
                     $tabFilm->execute([
                         ":film_id" => $film_id,
-                        ":category_id" => $cat
+                        ":category_id" => $cate
                     ]);
 
                 }   
 
-
+                //Redirige l'utilisateur vers listFilms après l'insertion réussie des données dans la DB. 
                 header('Location: index.php?action=listFilms');
                 die();
             }
