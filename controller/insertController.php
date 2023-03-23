@@ -41,14 +41,16 @@ class InsertController
                 $url_img = "";
             }
             $director_id = filter_input(INPUT_POST, "director", FILTER_SANITIZE_NUMBER_INT);
+            $category = filter_input(INPUT_POST, "category" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_NUMBER_INT);
+            // var_dump($category); die;
+            // $categorys = filter_input(INPUT_POST, "genres" , FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
-            // var_dump($_POST['director']);die;
             // SI chaque var n'est pas vide
-            if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && !empty($note)) {
-
+            if (!empty($film_name) && !empty($dt_release) && !empty($film_length) && !empty($synopsis) && !empty($url_img) && $director_id != false && !empty($director_id) && $category != false && !empty($category) && $note != false && !empty($note)) {
+                
                 $pdo = Connect::connectToDb();
-
+                // var_dump($category); die;
                 $sqlRequest = $pdo->prepare(
                     "
                     INSERT INTO film (film_name, dt_release, film_length, synopsis, url_img, director_id, note)
@@ -57,8 +59,27 @@ class InsertController
                 );
 
                 $sqlRequest->execute([
-                    "film_name" => $film_name, "dt_release" => $dt_release, "film_length" => $film_length, "url_img" => $url_img, "director_id" => $director_id, "synopsis" => $synopsis, "note" => $note
+                    "film_name" => $film_name, "dt_release" => $dt_release, "film_length" => $film_length, "synopsis" => $synopsis, "url_img" => $url_img, "director_id" => $director_id, "note" => $note
                 ]);
+
+                $film_id = $pdo->lastInsertId();
+    // var_dump($film_id); die;
+                //Préparation de la requete
+                $tabFilm = $pdo->prepare("
+                    INSERT INTO appartenir (film_id, category_id)
+                        VALUES (:film_id, :category_id)  
+                ");
+
+                //Exécution de la requete 
+                foreach($category as $cat){
+                    $tabFilm->execute([
+                        ":film_id" => $film_id,
+                        ":category_id" => $cat
+                    ]);
+
+                }   
+
+
                 header('Location: index.php?action=listFilms');
                 die();
             }
@@ -94,7 +115,7 @@ class InsertController
 
                 $sqlRequest1->execute(["fname" => $fname, "lname" => $lname, "sexe" => $sexe, "bhdate" => $birthdate]);
 
-                header('location:index.php?action=listDirectors');
+                header('location:index.php?action=listFilms');
                 die();
             }
         }
