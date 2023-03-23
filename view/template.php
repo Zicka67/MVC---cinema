@@ -30,6 +30,7 @@
                 <li><a href="index.php?action=listDirectors">Director</a></li>
                 <li><a href="index.php?action=listCategorys">Categorys</a></li>
                 <li><a href="index.php?action=listRoles">Roles</a></li>
+                <li><a href="index.php?action=listCastings">Castings</a></li>
             </ul>
             <div class="menu-log">
                 <a class="bouton1" href="">Sign in</a>
