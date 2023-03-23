@@ -20,7 +20,7 @@ ob_start();
             <?php
             foreach ($requestPerson->fetchAll() as $person) {
                 echo "<option value='" . $person['id_person'] . "'>" . $person['lname'] . "</option>";
-            } ?>
+            }; ?>
         </select>
     </div>
 
