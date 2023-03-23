@@ -15,8 +15,8 @@ class CinemaController
             "
             SELECT *
             FROM film 
-            INNER JOIN category_film ON film.id_film = category_film.id_film
-            INNER JOIN category ON category_film.id_category = category.id_category
+            INNER JOIN appartenir ON film.id_film = appartenir.film_id
+            INNER JOIN category ON appartenir.film_id = category.id_category
             WHERE film.id_film = 1
             "
         );
@@ -44,8 +44,8 @@ class CinemaController
             "
             SELECT *
             FROM film 
-            INNER JOIN category_film ON film.id_film = category_film.id_film
-            INNER JOIN category ON category_film.id_category = category.id_category
+            INNER JOIN appartenir ON film.id_film = appartenir.film_id
+            INNER JOIN category ON appartenir.category_id = category.id_category
             "
         );
         //Link à la view correspondante
