@@ -268,6 +268,7 @@ class CinemaController
         
         $pdo = Connect::connectToDb();
         
+        //Infos actor
         $requestActorInfos = $pdo->prepare(
             "
             SELECT id_actor, fname, lname, sexe, DATE_FORMAT(bdate, '%d/%m/%Y') AS bdate, url_img
@@ -279,7 +280,7 @@ class CinemaController
         $requestActorInfos->execute(["id_actor" => $id_actor]);
         
         
-        
+        //Filmo actor
         $requestActorFilmo = $pdo->prepare(
             "
             SELECT id_actor, id_film, film_name, dt_release, role_name
