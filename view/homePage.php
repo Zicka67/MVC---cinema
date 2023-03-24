@@ -22,7 +22,33 @@
 
         <div class="header-container">
 
-            <nav>
+            <section class="top-nav">
+                <div>
+                    <h2 class="logo"><a href="index.php?action=listFilms">GK Cine</a></h2>
+                </div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'>
+                </div>
+                </label>
+        
+                    <ul class="menu">
+                        <li><a href="index.php?action=listFilms">Films</a></li>
+                        <li><a href="index.php?action=listActors">Actors</a></li>
+                        <li><a href="index.php?action=listDirectors">Directors</a></li>
+                        <li><a href="index.php?action=listCategorys">Categorys</a></li>
+                        <li><a href="index.php?action=listRoles">Roles</a></li>
+                        <li><a href="index.php?action=listCastings">Castings</a></li>
+                    </ul>
+                    <div class="menu-log">
+                        <a class="bouton" href="">Sign in</a>
+                        <a class="bouton2" href="">Sign up</a>
+                     <a class="subscribe" href="index.php?action=admin">Admin</a>
+                    </div>
+              
+            </section>
+
+            <!-- <nav>
                 <h2 class="logo"><a href="index.php?action=listFilms">GK Cine</a></h2>
                 <ul class="menu">
                     <li><a href="index.php?action=listFilms">Films</a></li>
@@ -38,7 +64,7 @@
                     <a class="subscribe" href="index.php?action=admin">Admin</a>
                 </div>
 
-            </nav>
+            </nav> -->
         </div>
 
         <?php
