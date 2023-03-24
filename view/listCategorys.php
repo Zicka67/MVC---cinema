@@ -18,10 +18,13 @@ ob_start();
                     </a>
                 </div> --> 
                 <div class="container-infos">
-                    <a href="index.php?action=detailsCategory&id=<?= $Category['id_category'] ?>"><p><?= $Category["category_name"] ?></p></a>                 
+                   <p><a href="index.php?action=detailsCategory&id=<?= $Category['id_category'] ?>"><p><?= $Category["category_name"] ?></a>   </p>              
+                   <p>**********************************************</p>
                 </div>
+               
             </div>
         </div>
+
     <?php } ?>
 </div>
 <?php

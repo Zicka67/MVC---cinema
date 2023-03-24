@@ -18,6 +18,8 @@ ob_start();
                                     <p> Avec <a href="index.php?action=detailsActor&id=<?=$castings['id_actor']?>"><?= ucfirst($castings["lname"]) . " " . ucfirst($castings["fname"]) ?></a></p> 
                                     
                                     <p> Dans le role de <a href="index.php?action=detailsRole&id=<?=$castings['id_role']?>"> <?= ucfirst($castings["role_name"]) ?> </a>
+
+                                    <p>*********************************************************************</p>
                                 </div>
                                 
                         </div>
