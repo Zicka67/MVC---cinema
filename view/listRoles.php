@@ -8,17 +8,10 @@ ob_start();
 
         <div class="card-film">
             <div class="container-flex">
-                <!--<div class="container-img">
-                    <a href="index.php?action=listRoles&id=<?= $role["id_role"] ?>">
-                        <?php if (isset($role["url_img"]) != "") { ?>
-                            <img src="<?= $role["url_img"] ?>" alt="">
-                        <?php } else { ?>
-                            <p>Aucune image disponible</p>
-                        <?php } ?>
-                    </a>
-                </div> --> 
                 <div class="container-infos">
-                    <p><?= $role["role_name"] ?></p> </a>
+
+                    <p> <a href="index.php?action=detailsRole&id=<?= $role["id_role"] ?>"><?= $role["role_name"] ?></a></p>
+
                 </div>
             </div>
         </div>
