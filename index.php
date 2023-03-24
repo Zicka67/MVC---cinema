@@ -57,9 +57,9 @@ if (isset($_GET["action"])) {
 			// case "detailsCasting":
 			// 	$controllerCinema->detailsCasting($id);
 			// 	break;
-		// case "detailsRole":
-		// 	$controllerCinema->detailsRoles($id_role);
-		// 	break;
+		case "detailsRole":
+			$controllerCinema->detailsRole($id);
+			break;
 
 
 			// ***** ADMIN ****
