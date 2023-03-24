@@ -336,18 +336,20 @@ class CinemaController
         
         
         $pdo = Connect::connectToDb();
-        $category_name = "$id_role";
+
         $requestRolesInfos = $pdo->prepare(
             "
-            SELECT role_name, fname, lname
-            FROM role
-            INNER JOIN actor ON role.id_role = actor.id_actor
-            INNER JOIN person ON actor.person_id = person.id_person
+            SELECT role_name, lname, fname, id_actor
+            FROM casting
+            INNER JOIN role ON casting.role_id = role.id_role
+            INNER JOIN person ON casting.actor_id = person.id_person
+            INNER JOIN actor ON person.id_person = actor.id_actor
+            WHERE casting.role_id = :id_role
             "
         );
         $requestRolesInfos->execute(["id_role" => $id_role]);
         
-        require "view/detailsActors.php";
+        require "view/detailsRole.php";
     }
     
     //Category filmo                                                              //A CORRIGER
