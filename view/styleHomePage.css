@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +16,6 @@ a, p, h1, h2, ul, li {
 ul, li {
     font-size: 20px;
 }
-
 
 /* ***************** COLOR ************** */
 :root {
@@ -34,37 +35,50 @@ ul, li {
 /* ***************** HEADER ************** */
 .container {
     background-color: var(--tertiary-color);
+    margin: 0 auto;
 }
 
-nav {
+/* nav {
     display: flex;
     align-items: center;
     text-transform: uppercase;
     height: 80px;
+    justify-content: space-between;
+} */
+
+a {
+    color: var(--quaternary-color);
+    /* padding: 30px 30px; */
+    transition: 0.3s;
 }
 
-nav a {
+.logo a{
+    margin-left: 2vw;
+    vertical-align: center;
+    text-align: center;
     color: var(--quaternary-color);
-    padding: 30px 30px;
-    transition: 0.3s;
+    text-decoration: none;
 }
 
 .logo {
-    margin-left: 2vw;
+    flex: 0 0 25%;
 }
 
-nav ul {
+.logo a {
+    font-size: 1.5rem;
+}
+
+ul {
     list-style-type: none;
 }
 
-nav .menu a:hover {
+.menu a:hover {
     background-color: var(--tertiary-color);
-    padding: 31px 30px;
     transition: 0.3s;
 }
 
-.menu-log {
-    margin-right: 5vw;
+.menu-log a {
+    color: var(--quaternary-color);
 }
 
 .menu {
@@ -80,14 +94,12 @@ nav .menu a:hover {
     margin-right: 15px;
 }
 
-
 .bouton2 {
     background-color: var(--tertiary-color);
     padding: 7px 10px;
     border-radius: 5px;
     margin-right: 20px;
 }
-
 
 .menu {
     display: flex;
@@ -96,14 +108,10 @@ nav .menu a:hover {
     margin: 0 auto;
 }
 
-/* nav a:visited {
-    color: inherit;
-} */
-
 /* ***************** HEADER-CONTAINER ************** */
 
 .header-container {
-    height: 850px;
+    height: 89vh;
     background-image: url("../img/StarWarsVII-affiche-3039.jpg");
     background-size: cover;
     color: var(--quaternary-color);
@@ -119,6 +127,10 @@ nav .menu a:hover {
     position: absolute;
     bottom: 120px;
     right: 50px;
+}
+
+.menu li a {
+    color: var(--quaternary-color);
 }
 
 .bouton2 {
@@ -207,9 +219,7 @@ nav .menu a:hover {
     -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
 }
 
-
 /* ************************ MENU DEROULANT ********************* */
-
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -217,7 +227,7 @@ nav .menu a:hover {
     margin-left: 0;
     margin-top: 0;
     width: 110px;
-
+    
 }
 
 .dropdown-menu {
@@ -232,7 +242,7 @@ nav .menu a:hover {
     display: block;
     margin-bottom: 5px;
     padding: 0 5px;
-
+    
 }
 
 .dropdown-menu li:hover {
@@ -245,11 +255,11 @@ nav .menu a:hover {
 .dropdown-menu li a {
     color: var(--quaternary-color);
     text-decoration: none;
-
+    
 }
 
 .dropdown-menu li a:hover {
-    color: var(--tertiary-color);
+    color: var(--quaternary-color);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -284,9 +294,9 @@ footer {
     flex-wrap: wrap;
     width: 80vw;
     margin: 0 auto;
-  }
-  
-  .grid-item {
+}
+
+.grid-item {
     margin: 20px auto;
     width: 400px;
     height: 400px;
@@ -295,34 +305,34 @@ footer {
     box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
     -webkit-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
     -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.59);
-  }
-  
-  .grid-item img:hover {
+}
+
+.grid-item img:hover {
     filter: grayscale(0%);
-  }
-  
-  .blogContainer .grid-item img {
+}
+
+.blogContainer .grid-item img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
     filter: grayscale(100%);
     transition: 0.5s;
-  }
-  
-  .blogContainer .grid-item img:hover {
+}
+
+.blogContainer .grid-item img:hover {
     width: 100%;
     height: 100%;
     border-radius: 5px;
     filter: grayscale(0%);
     transform: 0.5s;
-  }
+}
 
-  
-  .blogContainer .grid-item span {
+
+.blogContainer .grid-item span {
     filter: none;
-  }
-  
-  .textOnImg {
+}
+
+.textOnImg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -332,11 +342,11 @@ footer {
     transform: translate(-10%, -90%);
     color: white;
     text-align: left;
-  }
+}
 
-  /* ************************ FORM ADMIN ******************************* */
+/* ************************ FORM ADMIN ******************************* */
 
-  input{
+input{
     height: 30px;
     width: 120px;
     border-radius: 5px;
@@ -368,6 +378,134 @@ form {
 
 .formLast {
     margin-top: 84px;
+}
+
+
+
+************************************/
+
+
+
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--quinary-color);
+  color: var(--quaternary-color);
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+/* #menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+} */
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 1200px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    flex-direction: column;
+    width: 100%;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: var(--quinary-color);
+  }
+
 }
 
 
