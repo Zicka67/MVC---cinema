@@ -13,13 +13,10 @@
 
     <link rel="stylesheet" href="view\styleHomePage.css">
 
-
-
     <title>HomePage</title>
 </head>
 
 <body>
-
 
     <div class="container">
 
@@ -43,7 +40,6 @@
 
             </nav>
         </div>
-
 
         <?php
         $films = $request->fetch();
@@ -178,63 +174,6 @@
 
 <script src="script.js"></script>
 
-
-
 </body>
 
 </html>
-
-
-
-
-<!-- <div class="container-main-img">
-            <div class="main-img1">
-                <div class="testJs">
-                    <a href="" class="img-main" data-category="Sf">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-                </div>
-           
-                <div class="testJs" data-category="Action">
-                <a href="" class="img-main" data-category="Action">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-
-                </div>
-         
-                <div class="testJs" data-category="Horror">
-                <a href="" class="img-main" data-category="Horror">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-                </div>
-            </div>
-
-           
-            <div class="main-img2">
-                <div class="testJs" data-category="Comedie">
-                <a href="" class="img-main" data-category="Comedie">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-                </div>
-         
-
-                <div class="testJs" data-category="Sf">
-                <a href="" class="img-main" data-category="Sf">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-                </div>
-         
-                <div class="testJs" data-category="Action">
-                <a href="" class="img-main" data-category="Action">
-                        <img src="" alt="">
-                        <p>SF</p>
-                    </a>
-                </div>
-            </div>
-        
-        </div> -->
