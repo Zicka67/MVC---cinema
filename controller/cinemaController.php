@@ -318,7 +318,7 @@ class CinemaController
 
         $SqlCategoryFilmo = $pdo->prepare(
             "
-            SELECT film_name, dt_release, film_length
+            SELECT *
             FROM category_film
             INNER JOIN film ON category_film.id_film = film.id_film
             WHERE category_film.id_category = :id_category
