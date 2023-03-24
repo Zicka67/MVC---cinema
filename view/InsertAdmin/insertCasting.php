@@ -9,17 +9,17 @@ ob_start();
         <select name="film_id" id="film_id">
             <?php
             foreach ($requestFilm->fetchAll() as $film) {
-                echo "<option value='" . $film['film_id'] . "'>" . $film['film_name'] . "</option>";
+                echo "<option value='" . $film['id_film'] . "'>" . $film['film_name'] . "</option>";
             }; ?>
         </select>
     </div>
 
     <div class="form">
-        <label for="person_id">Person </label>
-        <select name="person_id" id="person_id">
+        <label for="actor_id">Person </label>
+        <select name="actor_id" id="actor_id">
             <?php
-            foreach ($requestPerson->fetchAll() as $person) {
-                echo "<option value='" . $person['id_person'] . "'>" . $person['lname'] . "</option>";
+            foreach ($requestPerson->fetchAll() as $actor) {
+                echo "<option value='" . $actor['id_actor'] . "'>" . $actor['lname'] . "</option>";
             }; ?>
         </select>
     </div>
