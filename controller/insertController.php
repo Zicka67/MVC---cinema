@@ -257,11 +257,11 @@ class InsertController
             $film_id = filter_input(INPUT_POST, "film_id", FILTER_SANITIZE_NUMBER_INT);
             $actor_id = filter_input(INPUT_POST, "actor_id", FILTER_SANITIZE_NUMBER_INT);
             $role_id = filter_input(INPUT_POST, "role_id", FILTER_SANITIZE_NUMBER_INT);
-            var_dump($film_id); die; // film 0 - actor null - role ok
+            // var_dump($actor_id); die; // film 0 - actor null - role ok
 
 
-            if ($film_id != false && !empty($film_id) && $actor_id != false && !empty($actor_id) && $film_id != false && !empty($role_id)) {
-                var_dump($role_id); die; //donne 1
+            if ($film_id != false && !empty($film_id) && $actor_id != false && !empty($actor_id) && $role_id != false && !empty($role_id)) {
+                // var_dump($actor_id); die; //donne 1
                 $pdo = Connect::connectToDb();
 
                 $sqlRequest = $pdo->prepare(
