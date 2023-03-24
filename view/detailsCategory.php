@@ -13,7 +13,7 @@ ob_start();
 			if($SqlCategoryFilmo->rowCount()>0){
 				foreach($SqlCategoryFilmo->fetchAll() as $categoryFilmoFilm){ ?>     
                 
-				<p> - <a href="index.php?action=detailsFilm&id=<?=$categoryFilmoFilm['id_film']?> </a><?= $categoryFilmoFilm["film_name"]." sorti en : ". $categoryFilmoFilm["dt_release"]. " de " . $categoryFilmoFilm["film_length"] . " min"?></p>
+				<p> - <a href="index.php?action=detailsFilm&id=<?=$categoryFilmoFilm['id_film']?>"> <?= $categoryFilmoFilm["film_name"] ?> </a> <?php "sorti en : " . $categoryFilmoFilm["dt_release"] . " de"  . $categoryFilmoFilm["film_length"] . "min"?></p>
 				
 				<?php
             }
